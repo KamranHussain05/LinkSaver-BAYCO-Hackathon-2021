@@ -69,17 +69,20 @@ public class FileChanger {
 	/**
 	 * Only call if checkFile() returns true or createNewFile() returns true;
 	 * 
+	 * @pre Data d object needs to have 8 terms
 	 * @return String of file content
 	 */
-	public static String readFile() {
+	public static void readFile(Data d) {
 		String data = ""; // initialize String
-
+		int num = 0;
 		try {
 			File file = new File("Data/data.txt");
 			Scanner fileReader = new Scanner(file);
 
 			while (fileReader.hasNextLine()) {
 				data = fileReader.nextLine();
+				d.replaceStrings(num, data);
+				num++;
 			}
 
 			fileReader.close();
