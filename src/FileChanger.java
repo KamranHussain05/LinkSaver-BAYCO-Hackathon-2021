@@ -91,8 +91,6 @@ public class FileChanger {
 			System.out.println("File is not found, stacktrace: ");
 			e.printStackTrace();
 		}
-
-		return data;
 	}
 
 	/**
