@@ -60,7 +60,8 @@ public class HomeGui extends JFrame implements ActionListener {
 		courseCounter++;
 		if(courseCounter <= 7)
 		{
-			AddCourse courseWindow = new AddCourse(d, courseCounter);
+			AddCourse courseWindow = new AddCourse();
+			//AddCourse courseWindow = new AddCourse(d, courseCounter);
 	    	courseWindow.setBounds(500, 500, 550, 350);
 	    	courseWindow.setBackground(new Color(211,211,211));
 	    	courseWindow.setVisible(true);
