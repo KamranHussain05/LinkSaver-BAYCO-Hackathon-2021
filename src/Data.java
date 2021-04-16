@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Data {
 	
-	private ArrayList<String> strings = new ArrayList<String>();
+	private static ArrayList<String> strings = new ArrayList<String>();
 
 	public Data(int num)
 	{
@@ -33,7 +33,7 @@ public class Data {
     courseLink = inputCourseLink.getText();
     meetingLink = inputMeetingLink.getText();
     */
-	public String getCourseName(int n)
+	public static String getCourseName(int n)
 	{
 		String s = strings.get(n);
 		return s.substring(0, s.indexOf(';'));
