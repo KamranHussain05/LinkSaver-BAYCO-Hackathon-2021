@@ -36,7 +36,11 @@ public class Data {
 	public static String getCourseName(int n)
 	{
 		String s = strings.get(n);
-		return s.substring(0, s.indexOf(';'));
+		try {
+			return s.substring(0, s.indexOf(';'));
+		} catch (Exception e) {
+			return "";
+		}
 		
 	}
 	public String getCourseLink(int n)
