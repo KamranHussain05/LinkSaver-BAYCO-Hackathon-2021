@@ -22,6 +22,7 @@ public class Data {
 	{
 		return strings;
 	}
+	
 	public void printStrings()
 	{
 		for(String s : strings)
