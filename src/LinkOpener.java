@@ -13,13 +13,9 @@ public class LinkOpener {
 				Desktop.getDesktop().browse(new URI(s));
 			} catch (IOException | URISyntaxException e) {
 				// TODO Auto-generated catch block
+				System.out.println("error opening link");
 				e.printStackTrace();
 			}
 		}
-	}
-	
-	
-	public static void main(String[] args) {
-		openLink("https://fuhsd-org.zoom.us/j/95157752442?pwd=aWczQ3VXM0pPYXJIZHRtZDdMZ1A0UT09");
 	}
 }
