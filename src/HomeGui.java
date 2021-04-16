@@ -2,10 +2,11 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class HomeGui extends JFrame implements ActionListener{
+public class HomeGui extends JFrame implements ActionListener {
 	
 	private AddCourse courseName; //input variables
 	private JTextField course;
+	private int courseCounter;
 	
 	public HomeGui() {
 		super("Home");
@@ -13,8 +14,9 @@ public class HomeGui extends JFrame implements ActionListener{
 		AddCourse courseName = new AddCourse();
 		
 	    JPanel panel = new JPanel();
-	    GridLayout layout = new GridLayout(3,8);
+	    GridLayout layout = new GridLayout(2,8);
 	    layout.setVgap(30);
+	    layout.setHgap(30);
 	    panel.setLayout(layout);
 	    panel.setBackground(new Color(200,200,200));
 	
@@ -40,7 +42,11 @@ public class HomeGui extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		AddCourse courseWindow = new AddCourse();
+	    courseWindow.setBounds(500, 500, 550, 350);
+	    courseWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    courseWindow.setBackground(new Color(211,211,211));
+	    courseWindow.setVisible(true);
 	}
 	
 	public static void main(String [] args) {
