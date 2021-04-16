@@ -9,6 +9,11 @@ public class FileChanger {
 
 	// test method - delete later
 	public static void main(String[] args) {
+		if (!checkFile()) {
+			createFile();
+		}
+		
+		
 		Data d = new Data(7);
 		d.replaceStrings(0, "1");
 		d.replaceStrings(1, "2");
@@ -99,7 +104,7 @@ public class FileChanger {
 		// loops through array
 		for (String s : info) {
 			// write each element to txt
-			writer.write(s + System.getProperty("line.seperator"));
+			writer.write(s + "\n");
 		}
 
 		writer.close();
