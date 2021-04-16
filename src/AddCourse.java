@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+
 // Author: Kamran Hussain
 // Date: 4/16/2021
 // Rev 04
@@ -10,13 +11,14 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class AddCourse extends JFrame implements ActionListener {
   private JTextField inputCourseName, inputMeetingLink, inputCourseLink; //input variables
+  private String courseName, courseLink, meetingLink;
 
   public AddCourse() {
     super("Class Scheduler");
 
     JPanel panel = new JPanel();
     GridLayout layout = new GridLayout(3,3);
-    layout.setVgap(40);
+    layout.setVgap(30);
     panel.setLayout(layout);
     panel.setBackground(new Color(200,200,200));
 
@@ -58,7 +60,9 @@ public class AddCourse extends JFrame implements ActionListener {
   }
 
   public void actionPerformed(ActionEvent e) {
-    
+    courseName = inputCourseName.getText();
+    courseLink = inputCourseLink.getText();
+    meetingLink = inputMeetingLink.getText();
   }
 }
 
