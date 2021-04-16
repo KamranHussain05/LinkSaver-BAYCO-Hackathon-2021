@@ -1,7 +1,9 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
@@ -78,12 +80,55 @@ public class FileChanger {
 	 */
 	public static void writeFile(ArrayList<String> info) throws IOException {
 		FileWriter writer = new FileWriter("Data/data.txt");
-
+		
 		// loops through array
 		for (String s : info) {
 			// write each element to txt
 			writer.write(s + "\n");
 		}
+
+		writer.close();
+	}
+	
+	/**
+	 * Overloaded function with line number to write
+	 * @param info
+	 * @throws IOException
+	 */
+	public static void writeFile(ArrayList<String> info, int lineNum) throws IOException {
+		FileWriter writer = new FileWriter("Data/data.txt");
+		BufferedReader reader = new BufferedReader(new FileReader("Data/data.txt"));
+		
+		String oldContent = "";
+		
+		// reads old content
+		String line = reader.readLine();
+        while (line != null) {
+            oldContent = oldContent + line + System.lineSeparator();
+             
+            line = reader.readLine();
+        }
+        
+        reader.close();
+        
+        BufferedReader lineReader = new BufferedReader(new FileReader("Data/data.txt"));
+        
+        for (int i = 0; i < lineNum; i++) {
+            lineReader.readLine();
+        }
+
+        String oldString = lineReader.readLine();
+        String newString = "";
+        
+        // loops through arrayList
+     	for (String s : info) {
+   			// write each element to newString
+   			newString += s; 
+   		}        
+        
+        String newContent = oldContent.replaceAll(oldString, newString);
+		
+		writer.write(newContent);
 
 		writer.close();
 	}

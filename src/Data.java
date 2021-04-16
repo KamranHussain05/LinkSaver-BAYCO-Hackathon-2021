@@ -35,7 +35,7 @@ public class Data {
     */
 	public static String getCourseName(int n)
 	{
-		String s = strings.get(n);
+		String s = strings.get(n);	
 		try {
 			return s.substring(0, s.indexOf(';'));
 		} catch (Exception e) {
