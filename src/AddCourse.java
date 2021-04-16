@@ -1,5 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+
 import javax.swing.*;
 
 
@@ -13,10 +15,16 @@ public class AddCourse extends JFrame implements ActionListener {
   private JTextField inputCourseName, inputMeetingLink, inputCourseLink; //input variables
   private String courseName, courseLink, meetingLink;
   private JButton calc;
-
-  public AddCourse() {
+  private Data d;
+  private int num;
+  
+  
+  public AddCourse(Data d, int num) {
     super("Class Scheduler");
-
+    
+    this.d = d;
+    this.num = num;
+    
     JPanel panel = new JPanel();
     GridLayout layout = new GridLayout(3,3);
     layout.setVgap(30);
@@ -64,6 +72,16 @@ public class AddCourse extends JFrame implements ActionListener {
     courseName = inputCourseName.getText();
     courseLink = inputCourseLink.getText();
     meetingLink = inputMeetingLink.getText();
+    
+    String s = courseName + ";" + courseLink + ";" + meetingLink;
+    d.replaceStrings(num, s);
+    try {
+		FileChanger.writeFile(d.returnStrings());
+	} catch (IOException e1) {
+		// TODO Auto-generated catch block
+		System.out.println("AddCourse writing file failed");
+		e1.printStackTrace();
+	}
     
     calc.setText("Class Added!");
     calc.setBackground(new Color(97, 213, 109));

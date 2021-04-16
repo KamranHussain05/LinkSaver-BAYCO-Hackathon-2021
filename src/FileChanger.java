@@ -7,29 +7,6 @@ import java.util.ArrayList;
 
 public class FileChanger {
 
-	// test method - delete later
-	public static void main(String[] args) {
-		if (!checkFile()) {
-			createFile();
-		}
-		
-		
-		Data d = new Data(7);
-		d.replaceStrings(0, "1");
-		d.replaceStrings(1, "2");
-		d.replaceStrings(2, "3");
-		d.replaceStrings(3, "4");
-		d.replaceStrings(4, "5");
-		d.replaceStrings(5, "6");
-		d.replaceStrings(6, "7");
-		try {
-			writeFile(d.returnStrings());
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-	}
-
 	/**
 	 * Method to run every time program starts, creates a file if there is no file,
 	 * and returns true if file was present
