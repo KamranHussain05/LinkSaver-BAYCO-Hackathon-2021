@@ -17,11 +17,11 @@ public class Reader {
 
 		try {
 			File file = new File("Data/data.txt");
-			isFile = false;
-		}
-
-		catch (FileNotFoundException e) {
+			Scanner fileReader = new Scanner(file);
 			isFile = true;
+		} 
+		catch (FileNotFoundException e) {
+			isFile = false;
 		}
 
 		return isFile;
