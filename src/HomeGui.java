@@ -32,95 +32,88 @@ public class HomeGui extends JFrame implements ActionListener {
 	    panel.setLayout(layout);
 	    panel.setBackground(new Color(200,200,200));
 	
-	    JLabel nameLabel1 = new JLabel(Data.getCourseName(0));
-	    nameLabel1.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
-	    panel.add(nameLabel1);
-	    course = new JTextField(20);
+	    //Tile 1
+	    course = new JTextField(1);
+	    course.setText(Data.getCourseName(0));
 	    course.setEditable(false);
 	    course.setHorizontalAlignment(JTextField.RIGHT);
 	    course.setBackground(new Color(230,230,225));
 	    course.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
 	    panel.add(course);
 	    
-	    JLabel nameLabel2 = new JLabel(Data.getCourseName(0));
-	    nameLabel2.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
-	    panel.add(nameLabel2);
+	    //Tile 2
 	    course = new JTextField(20);
+	    course.setText(Data.getCourseName(1));
 	    course.setEditable(false);
 	    course.setHorizontalAlignment(JTextField.RIGHT);
 	    course.setBackground(new Color(230,230,225));
 	    course.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
 	    panel.add(course);
 	    
-	    JLabel nameLabel3 = new JLabel(Data.getCourseName(0));
-	    nameLabel3.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
-	    panel.add(nameLabel3);
+	    //Tile 3
 	    course = new JTextField(20);
+	    course.setText(Data.getCourseName(2));
 	    course.setEditable(false);
 	    course.setHorizontalAlignment(JTextField.RIGHT);
 	    course.setBackground(new Color(230,230,225));
 	    course.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
 	    panel.add(course);
 	    
-	    JLabel nameLabel4 = new JLabel(Data.getCourseName(0));
-	    nameLabel4.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
-	    panel.add(nameLabel4);
+	    //Tile 4
 	    course = new JTextField(20);
+	    course.setText(Data.getCourseName(3));
 	    course.setEditable(false);
 	    course.setHorizontalAlignment(JTextField.RIGHT);
 	    course.setBackground(new Color(230,230,225));
 	    course.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
 	    panel.add(course);
 	    
-	    JLabel nameLabel5 = new JLabel(Data.getCourseName(0));
-	    nameLabel5.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
-	    panel.add(nameLabel5);
+	    //Tile 5
 	    course = new JTextField(20);
+	    course.setText(Data.getCourseName(4));
 	    course.setEditable(false);
 	    course.setHorizontalAlignment(JTextField.RIGHT);
 	    course.setBackground(new Color(230,230,225));
 	    course.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
 	    panel.add(course);
 	    
-	    JLabel nameLabel6 = new JLabel(Data.getCourseName(0));
-	    nameLabel6.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
-	    panel.add(nameLabel6);
+	    //Tile 6
 	    course = new JTextField(20);
+	    course.setText(Data.getCourseName(5));
 	    course.setEditable(false);
 	    course.setHorizontalAlignment(JTextField.RIGHT);
 	    course.setBackground(new Color(230,230,225));
 	    course.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
 	    panel.add(course);
 	    
-	    JLabel nameLabel7 = new JLabel(Data.getCourseName(0));
-	    nameLabel7.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
-	    panel.add(nameLabel7);
+	    //Tile 7
 	    course = new JTextField(20);
+	    course.setText(Data.getCourseName(6));
 	    course.setEditable(false);
 	    course.setHorizontalAlignment(JTextField.RIGHT);
 	    course.setBackground(new Color(230,230,225));
 	    course.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
 	    panel.add(course);
 	    
-	    JLabel nameLabel8 = new JLabel(Data.getCourseName(0));
-	    nameLabel8.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
-	    panel.add(nameLabel8);
+	    //Tile 8
 	    course = new JTextField(20);
+	    course.setText(Data.getCourseName(7));
 	    course.setEditable(false);
 	    course.setHorizontalAlignment(JTextField.RIGHT);
 	    course.setBackground(new Color(230,230,225));
 	    course.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
 	    panel.add(course);
 	
-	    JButton calc = new JButton("+");
+	    JButton calc = new JButton("Course Planner");
 	    calc.addActionListener(this);
 	    calc.setBackground(new Color(213, 109, 97));
 	    calc.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 40));
 	    calc.setBounds(100, 100, 10, 10);
+	    calc.enable(false);
 	
 	    Container c = getContentPane();
 	    c.add(panel, BorderLayout.CENTER);
-	    c.add(calc, BorderLayout.AFTER_LAST_LINE);
+	    c.add(calc, BorderLayout.BEFORE_FIRST_LINE);
 	  }
 
 
