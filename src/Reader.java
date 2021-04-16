@@ -20,7 +20,7 @@ public class Reader {
 			isFile = false;
 		}
 
-		catch (Exception e) {
+		catch (FileNotFoundException e) {
 			isFile = true;
 		}
 
