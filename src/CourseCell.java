@@ -1,14 +1,12 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class CourseCell extends JFrame implements ActionListener{
+public class CourseCell extends JFrame {
 	
 	private AddCourse courseName;
 	private JTextField course;
@@ -30,11 +28,4 @@ public class CourseCell extends JFrame implements ActionListener{
 	    course.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
 	    panel.add(course);
 	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

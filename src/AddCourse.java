@@ -12,6 +12,7 @@ import javax.swing.*;
 public class AddCourse extends JFrame implements ActionListener {
   private JTextField inputCourseName, inputMeetingLink, inputCourseLink; //input variables
   private String courseName, courseLink, meetingLink;
+  private JButton calc;
 
   public AddCourse() {
     super("Class Scheduler");
@@ -49,7 +50,7 @@ public class AddCourse extends JFrame implements ActionListener {
     inputMeetingLink.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
     panel.add(inputMeetingLink);
 
-    JButton calc = new JButton("Add Class");
+    calc = new JButton("Add Class");
     calc.addActionListener(this);
     calc.setBackground(new Color(0,215,215));
     calc.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 20));
@@ -63,6 +64,9 @@ public class AddCourse extends JFrame implements ActionListener {
     courseName = inputCourseName.getText();
     courseLink = inputCourseLink.getText();
     meetingLink = inputMeetingLink.getText();
+    
+    calc.setText("Class Added!");
+    calc.setBackground(new Color(97, 213, 109));
   }
 }
 
