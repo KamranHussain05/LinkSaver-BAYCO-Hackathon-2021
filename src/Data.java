@@ -23,6 +23,37 @@ public class Data {
 		return strings;
 	}
 	
+	public String getFullString(int n) {
+		return strings.get(n);
+	
+	}
+	
+	/*
+	courseName = inputCourseName.getText();
+    courseLink = inputCourseLink.getText();
+    meetingLink = inputMeetingLink.getText();
+    */
+	public String getCourseName(int n)
+	{
+		String s = strings.get(n);
+		return s.substring(0, s.indexOf(';'));
+		
+	}
+	public String getCourseLink(int n)
+	{
+		String s = strings.get(n);
+		return s.substring(s.indexOf(';')+1, s.lastIndexOf(';'));
+
+		
+	}
+	public String getMeetingLink(int n)
+	{
+		String s = strings.get(n);
+		return s.substring(s.lastIndexOf(';')+1);
+	}
+	
+	
+	
 	public void printStrings()
 	{
 		for(String s : strings)
