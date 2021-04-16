@@ -85,6 +85,7 @@ public class AddCourse extends JFrame implements ActionListener {
     
     calc.setText("Class Added!");
     calc.setBackground(new Color(97, 213, 109));
+    calc.setEnabled(false);
   }
 }
 
