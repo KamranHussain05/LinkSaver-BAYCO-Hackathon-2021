@@ -2,8 +2,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.util.ArrayList;
 
-public class Reader {
+public class FileChanger {
 
 	/**
 	 * Method to run every time program starts, creates a file if there is no file,
@@ -51,6 +53,25 @@ public class Reader {
 		}
 		
 		return data;
+	}
+	
+	
+	/**
+	 * Called to write to existing .txt file
+	 * Only call if file is created
+	 * @param info ArrayList of links and names
+	 * @throws IOException
+	 */
+	public static void writeFile(ArrayList<String> info) throws IOException {
+		FileWriter writer = new FileWriter("Data/data.txt");
+		
+		// loops through array
+		for (String s : info) {
+			// write each element to txt
+			writer.write(s + System.getProperty("line.seperator"));
+		}
+		
+		writer.close();
 	}
 
 }
