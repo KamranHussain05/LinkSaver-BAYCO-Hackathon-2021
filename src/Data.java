@@ -14,12 +14,19 @@ public class Data {
 	
 	public void replaceStrings(int num, String s)
 	{
-		
+		strings.remove(num);
+		strings.add(num,s);
 	}
 	
 	public ArrayList<String> returnStrings()
 	{
 		return strings;
 	}
-	
+	public void printStrings()
+	{
+		for(String s : strings)
+		{
+			System.out.println(s);
+		}
+	}
 }
