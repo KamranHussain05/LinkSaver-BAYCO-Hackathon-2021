@@ -5,7 +5,7 @@ import java.net.URISyntaxException;
 
 public class LinkOpener {
 
-	public void openLink(String s)
+	public static void openLink(String s)
 	{
 		if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) 
 		{
@@ -19,7 +19,7 @@ public class LinkOpener {
 	}
 	
 	
-	
-	
-	
+	public static void main(String[] args) {
+		openLink("https://fuhsd-org.zoom.us/j/95157752442?pwd=aWczQ3VXM0pPYXJIZHRtZDdMZ1A0UT09");
+	}
 }
