@@ -1,57 +1,43 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.text.DecimalFormat;
 
+@SuppressWarnings("serial")
 public class Gui extends JFrame implements ActionListener {
   private JTextField inputCourseName, inputMeetingLink; //input variables
-  private JTextField display; //Output Variable, NOT NEEDED
-  private DecimalFormat money = new DecimalFormat("$0.00");
 
   public Gui() {
     super("Class Scheduler");
 
     JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(3,2));
+    panel.setLayout(new GridLayout(2,8));
 
-    panel.add(new JLabel("   Class:"));
+    JLabel nameLabel = new JLabel("   Course Name:\n");
+    panel.add(nameLabel);
     inputCourseName = new JTextField(5);
     inputCourseName.setHorizontalAlignment(JTextField.RIGHT);
     panel.add(inputCourseName);
 
-    panel.add(new JLabel("   Meeting Link:"));
+    JLabel linkLabel = new JLabel("   Meeting Link:\n");
+    panel.add(linkLabel);
     inputMeetingLink = new JTextField(5);
     inputMeetingLink.setHorizontalAlignment(JTextField.RIGHT);
     panel.add(inputMeetingLink);
 
-    panel.add(new JLabel("   Total wages:"));
-    display = new JTextField(20);
-    display.setHorizontalAlignment(JTextField.RIGHT);
-    display.setEditable(false);
-    display.setBackground(Color.gray);
-    panel.add(display);
-
-    JButton calc = new JButton("Calculate wages");
+    JButton calc = new JButton("Add Class");
     calc.addActionListener(this);
+    calc.setBackground(Color.LIGHT_GRAY);
 
     Container c = getContentPane();
     c.add(panel, BorderLayout.CENTER);
+    c.add(nameLabel, BorderLayout.CENTER);
+    c.add(linkLabel, BorderLayout.CENTER);
     c.add(calc, BorderLayout.SOUTH);
   }
 
   public void actionPerformed(ActionEvent e) {
-    String s = inputCourseName.getText();
-    double hours = Double.parseDouble(s);
-    s = inputMeetingLink.getText();
-    double rate = Double.parseDouble(s);
-    double wages = result(hours, rate);
-    display.setText(money.format(wages));
+    
   }
-
-private double result(double hours, double rate) {
-	// TODO Auto-generated method stub
-	return 0;
-}
 }
 
 
