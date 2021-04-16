@@ -92,7 +92,7 @@ public class FileChanger {
 		// loops through array
 		for (String s : info) {
 			// write each element to txt
-			writer.write(s + "\n");
+			writer.write(s + System.getProperty("line.seperator"));
 		}
 
 		writer.close();
