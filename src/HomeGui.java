@@ -7,9 +7,23 @@ public class HomeGui extends JFrame implements ActionListener {
 	private AddCourse courseName;
 	private JTextField course;
 	private int courseCounter;
+	private Data d;
+	
 	
 	public HomeGui() {
 		super("Home");
+		
+		courseCounter = -1;
+		d = new Data(8);
+		if(FileChanger.checkFile())
+		{
+			FileChanger.readFile(d);
+		}
+		else
+		{
+			FileChanger.createFile();
+			FileChanger.readFile(d);
+		}
 		
 		AddCourse courseName = new AddCourse();
 		
@@ -39,17 +53,18 @@ public class HomeGui extends JFrame implements ActionListener {
 	    c.add(panel, BorderLayout.CENTER);
 	    c.add(calc);
 	  }
-	
-	public int getCounter() {
-		return courseCounter;
-	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		AddCourse courseWindow = new AddCourse();
-	    courseWindow.setBounds(500, 500, 550, 350);
-	    courseWindow.setBackground(new Color(211,211,211));
-	    courseWindow.setVisible(true);
+		courseCounter++;
+		if(courseCounter <= 7)
+		{
+			AddCourse courseWindow = new AddCourse(d, courseCounter);
+	    	courseWindow.setBounds(500, 500, 550, 350);
+	    	courseWindow.setBackground(new Color(211,211,211));
+	    	courseWindow.setVisible(true);
+		}
 	}
 	
 	public static void main(String [] args) {
