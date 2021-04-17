@@ -46,7 +46,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    layout.setVgap(5);
 	    layout.setHgap(5);
 	    panel.setLayout(layout);
-	    panel.setBackground(new Color(200,200,200));
+	    panel.setBackground(new Color(255,255,255));
 	
 	    //Tile 1
 	    course1 = new JButton();
@@ -61,7 +61,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course1.add(editCourse1);
 	    
 	    course1.setHorizontalAlignment(JTextField.CENTER);
-	    course1.setBackground(new Color(230, 183, 97));
+	    course1.setBackground(new Color(191, 192, 192));
 	    course1.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course1);
 	    
@@ -78,7 +78,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course2.add(editCourse2);
 	    
 	    course2.setHorizontalAlignment(JTextField.CENTER);
-	    course2.setBackground(new Color(230, 183, 97));
+	    course2.setBackground(new Color(191, 192, 192));
 	    course2.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course2);
 	    
@@ -95,7 +95,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course3.add(editCourse3);
 	    
 	    course3.setHorizontalAlignment(JTextField.CENTER);
-	    course3.setBackground(new Color(230, 183, 97));
+	    course3.setBackground(new Color(191, 192, 192));
 	    course3.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    this.add(course3);
 	    panel.add(course3);
@@ -114,7 +114,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course4.add(editCourse4);
 	    
 	    course4.setHorizontalAlignment(JTextField.CENTER);
-	    course4.setBackground(new Color(230, 183, 97));
+	    course4.setBackground(new Color(191, 192, 192));
 	    course4.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course4);
 	    
@@ -131,7 +131,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course5.add(editCourse5);
 	    
 	    course5.setHorizontalAlignment(JTextField.CENTER);
-	    course5.setBackground(new Color(230, 183, 97));
+	    course5.setBackground(new Color(191, 192, 192));
 	    course5.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course5);
 	    
@@ -148,7 +148,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course6.add(editCourse6);
 	    
 	    course6.setHorizontalAlignment(JTextField.CENTER);
-	    course6.setBackground(new Color(230, 183, 97));
+	    course6.setBackground(new Color(191, 192, 192));
 	    course6.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course6);
 	    
@@ -165,7 +165,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course7.add(editCourse7);
 	    
 	    course7.setHorizontalAlignment(JTextField.CENTER);
-	    course7.setBackground(new Color(230, 183, 97));
+	    course7.setBackground(new Color(191, 192, 192));
 	    course7.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course7);
 	    
@@ -182,18 +182,19 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course8.add(editCourse8);
 	    
 	    course8.setHorizontalAlignment(JTextField.CENTER);
-	    course8.setBackground(new Color(230, 183, 97));
+	    course8.setBackground(new Color(191, 192, 192));
 	    course8.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course8);
 	
 	    JPanel header = new JPanel();
-	    header.setBackground(new Color(80, 120, 147));
+	    header.setBackground(new Color(79, 93, 117));
 	    title = new JTextPane();
 	    title.setText("Schedule Planner");
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 40));
-	    title.setBackground(new Color(80, 120, 147));
+	    title.setForeground(new Color(255, 255, 255));
+	    title.setBackground(new Color(79, 93, 117));
 	    
 	    Icon plusIcon = new ImageIcon("src/plus.png");
 	    addCourse = new JButton(plusIcon);
@@ -211,12 +212,13 @@ public class HomeGui extends JFrame implements ActionListener {
 	    doc.setParagraphAttributes(0, doc.getLength(), center, false);
 	    
 	    JPanel bottomFooter = new JPanel();
-	    bottomFooter.setBackground(new Color(160, 187, 92));
+	    bottomFooter.setBackground(new Color(255, 255, 255));
 	    footer = new JTextPane();
+	    footer.setForeground(new Color(0,0,0));
 	    footer.setText("Click \'edit\' to input information!");
 	    footer.setEditable(false);
 	    footer.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 20));
-	    footer.setBackground(new Color(160, 187, 92));
+	    footer.setBackground(new Color(255, 255, 255));
 	    bottomFooter.add(footer);
 	    
 	    StyledDocument doc2 = footer.getStyledDocument();
