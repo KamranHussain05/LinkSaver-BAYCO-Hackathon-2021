@@ -201,7 +201,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    title.setText("Schedule Planner");
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
-	    title.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 40));
+	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    
@@ -226,7 +226,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    footer.setForeground(new Color(0,0,0));
 	    footer.setText("Click \'edit\' to input information!");
 	    footer.setEditable(false);
-	    footer.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 20));
+	    footer.setFont(new Font("Montserrat", Font.PLAIN, 20));
 	    footer.setBackground(new Color(255, 255, 255));
 	    bottomFooter.add(footer);
 	    
