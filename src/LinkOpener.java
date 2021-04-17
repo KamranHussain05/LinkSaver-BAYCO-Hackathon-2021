@@ -5,7 +5,12 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class LinkOpener {
-	
+
+	/**
+	 * Opens link via Desktop Browser
+	 * 
+	 * @param s String url
+	 */
 	public static void openLink(String s) {
 		if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
 
@@ -21,7 +26,7 @@ public class LinkOpener {
 	}
 
 	/**
-	 * Checks if url is valid
+	 * Checks if inputted url is valid
 	 * 
 	 * @param url String
 	 * @return Boolean that dictates if url is valid
@@ -30,9 +35,11 @@ public class LinkOpener {
 		Boolean builtString = false;
 		String newUrl = "";
 
+		// blank url check
 		if (url == "")
 			return false;
-		// if url is without http header
+
+		// http header check
 		else if (url.contains("http://") == false && url.contains("https://") == false) {
 			// new string that includes header
 			newUrl = "https://" + url;
