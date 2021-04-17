@@ -47,17 +47,26 @@ public class HomeGui extends JFrame implements ActionListener {
 	    panel.setBackground(new Color(200,200,200));
 	
 	    //Tile 1
+	    JPanel course1Panel = new JPanel();
+	    GridLayout course1Layout = new GridLayout(4,4);
+	    
 	    course1 = new JButton();
 	    course1.setText(Data.getCourseName(0));
-	    course1.setEnabled(false);
-	    course1.setHorizontalAlignment(JTextField.CENTER);
+	    course1.setEnabled(true);
+	    course1.setMargin(new Insets(10,10,10,10));
 	    course1.setBackground(new Color(230, 183, 97));
 	    course1.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    course1.addActionListener(this);
+	    
+	    
 	    JButton editCourse1 = new JButton();
-	    editCourse1.setBounds(50,50, 100, 100);
-	    course1.add(editCourse1);
-	    panel.add(course1);
+	    editCourse1.setText("Edit");
+	    editCourse1.setMargin(new Insets(10,10,10,10));
+	    course1Panel.add(editCourse1, BorderLayout.PAGE_START);
+	    
+	    course1Panel.setLayout(course1Layout);
+	    course1Panel.add(course1, BorderLayout.PAGE_END);
+	    panel.add(course1Panel);
 	    
 	    //Tile 2
 	    course2 = new JButton();
