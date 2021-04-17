@@ -33,13 +33,10 @@ public class ErrorMessage extends JFrame implements ActionListener {
 	    panel.setLayout(layout);
 	    panel.setBackground(new Color(200,200,200));
 	    
-	    //Error label
+	    //Error labels
 	    JLabel error = new JLabel("The link you added is invalid", SwingConstants.CENTER);
 	    error.setFont(new Font("Montserrat", Font.PLAIN, 17));
-	    JLabel error2 = new JLabel("Link must have https://", SwingConstants.CENTER);
-	    error2.setFont(new Font("Montserrat", Font.PLAIN, 17));
 	    panel.add(error, BorderLayout.CENTER);
-	    panel.add(error2, BorderLayout.CENTER);
 	    
 	    //Dismiss button
 	    JPanel foot = new JPanel();
