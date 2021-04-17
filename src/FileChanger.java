@@ -49,6 +49,7 @@ public class FileChanger {
 	 * Only call if checkFile() returns true or createNewFile() returns true;
 	 * 
 	 * @pre Data d object needs to have 8 terms
+	 * @param d
 	 * @return String of file content
 	 */
 	public static void readFile(Data d) {

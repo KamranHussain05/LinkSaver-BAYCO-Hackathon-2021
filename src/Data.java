@@ -28,11 +28,11 @@ public class Data {
 	
 	}
 	
-	/*
-	courseName = inputCourseName.getText();
-    courseLink = inputCourseLink.getText();
-    meetingLink = inputMeetingLink.getText();
-    */
+	/**
+	 * 
+	 * @param n
+	 * @return
+	 */
 	public static String getCourseName(int n)
 	{
 		String s = strings.get(n);	
