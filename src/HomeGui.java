@@ -58,7 +58,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    editCourse1.setText("Edit");
 	    editCourse1.addActionListener(this);
 	    this.add(editCourse1);
-	    course1.add(editCourse1);
+	    panel.add(course1);
 	    
 	    course1.setHorizontalAlignment(JTextField.CENTER);
 	    course1.setBackground(new Color(230, 183, 97));
