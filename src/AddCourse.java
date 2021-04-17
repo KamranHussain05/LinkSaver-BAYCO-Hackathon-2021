@@ -10,7 +10,7 @@ import javax.swing.*;
 public class AddCourse extends JFrame implements ActionListener {
   private JTextField inputCourseName, inputMeetingLink, inputCourseLink; //input variables
   private String courseName, courseLink, meetingLink;
-  private JButton calc;
+  private JButton addClass;
   private Data d;
   private int num;
   
@@ -59,52 +59,74 @@ public AddCourse(Data d, int num) {
     inputMeetingLink.setText(d.getMeetingLink(num));
     panel.add(inputMeetingLink);
 
-    calc = new JButton("Add Class");
-    calc.addActionListener(this);
-    calc.setBackground(new Color(79, 93, 117));
-    calc.setFont(new Font("Montserrat", Font.PLAIN, 20));
-    calc.setForeground(new Color(255,255,255));
+    addClass = new JButton("Add Class");
+    addClass.addActionListener(this);
+    addClass.setBackground(new Color(79, 93, 117));
+    addClass.setFont(new Font("Montserrat", Font.PLAIN, 20));
+    addClass.setForeground(new Color(255,255,255));
 
     Container c = getContentPane();
     c.add(panel, BorderLayout.CENTER);
-    c.add(calc, BorderLayout.SOUTH);
+    c.add(addClass, BorderLayout.SOUTH);
   }
 
   public void actionPerformed(ActionEvent e) {
+	 ImageIcon logo = new ImageIcon("src/logo.png");
+	 
     courseName = inputCourseName.getText();
     courseLink = inputCourseLink.getText();
     meetingLink = inputMeetingLink.getText();
     
-
-    
-    String s = courseName + ";" + courseLink + ";" + meetingLink;
-    d.replaceStrings(num, s);
-    try {
-		FileChanger.writeFile(d.returnStrings());
-	} catch (IOException e1) {
-		System.out.println("AddCourse writing file failed");
-		e1.printStackTrace();
+    if(LinkOpener.urlValid(courseLink) == true && LinkOpener.urlValid(meetingLink) == true) {    	
+    	String s = courseName + ";" + courseLink + ";" + meetingLink;
+	    d.replaceStrings(num, s);
+	    try {
+			FileChanger.writeFile(d.returnStrings());
+		} catch (IOException e1) {
+			System.out.println("AddCourse writing file failed");
+			e1.printStackTrace();
+		}
+	    
+	    // sleeps
+	    try {
+			TimeUnit.MILLISECONDS.sleep(200);
+		} catch (InterruptedException e1) {
+			System.out.println("AddCourse sleep timer error.");
+			e1.printStackTrace();
+		}
+	    
+	    // destroys window
+	    setVisible(false);
+	    dispose();
+	    
+	    HomeGui.refresh();
+	} else {
+		System.out.println("Error 400 Bad Request Error");
+		ErrorMessage errorMessage1 = new ErrorMessage();
+    	errorMessage1.setBounds(500, 500, 300, 170);
+    	errorMessage1.setBackground(new Color(211,211,211));
+    	errorMessage1.setVisible(true);
+    	
+    	errorMessage1.setIconImage(logo.getImage());
 	}
     
-    calc.setText("Class Added!");
-    calc.setBackground(new Color(97, 213, 109));
-    calc.setEnabled(false);
-    
-    // sleeps
-    try {
-		TimeUnit.MILLISECONDS.sleep(200);
-	} catch (InterruptedException e1) {
-		System.out.println("AddCourse sleep timer error.");
-		e1.printStackTrace();
-	}
-    
-    // destroys window
-    setVisible(false);
-    dispose();
-    
-    HomeGui.refresh();
+    if(ErrorMessage.isDismissed()==true) {
+    	 String s = courseName + ";" + courseLink + ";" + meetingLink;
+    	    d.replaceStrings(num, s);
+    	    try {
+    			FileChanger.writeFile(d.returnStrings());
+    		} catch (IOException e1) {
+    			System.out.println("AddCourse writing file failed");
+    			e1.printStackTrace();
+    		}
+    	    
+    	    // sleeps
+    	    try {
+    			TimeUnit.MILLISECONDS.sleep(200);
+    		} catch (InterruptedException e1) {
+    			System.out.println("AddCourse sleep timer error.");
+    			e1.printStackTrace();
+    		}
+    } 
   }
 }
-
-
-
