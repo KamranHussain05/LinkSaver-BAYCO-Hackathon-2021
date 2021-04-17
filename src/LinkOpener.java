@@ -41,7 +41,7 @@ public class LinkOpener {
 		String newUrl = "";
 
 		// blank url check
-		if (url == "")
+		if (url == "" || url == " ")
 			return false;
 		// http header check
 		else if (url.contains("http://") == false && url.contains("https://") == false) {
@@ -70,5 +70,7 @@ public class LinkOpener {
 			}
 		}
 	}
+	
+	
 
 }
