@@ -100,7 +100,7 @@ public class AddCourse extends JFrame implements ActionListener {
 	    meetingLink = inputMeetingLink.getText();
 	    
 	    //Checks if url is valid, then creates a string with all values
-	    if(LinkOpener.urlValid(courseLink) == true && LinkOpener.urlValid(meetingLink) == true) {    	
+	    if((LinkOpener.urlValid(courseLink) == true && LinkOpener.urlValid(meetingLink) == true)) {    	
 	    	String s = courseName + ";" + courseLink + ";" + meetingLink;
 		    d.replaceStrings(num, s);
 		    try {
@@ -109,7 +109,7 @@ public class AddCourse extends JFrame implements ActionListener {
 				System.out.println("AddCourse writing file failed");
 				e1.printStackTrace();
 			}
-		    
+		    System.out.println("No Error Called");
 		    // sleeps
 		    try {
 				TimeUnit.MILLISECONDS.sleep(200);
