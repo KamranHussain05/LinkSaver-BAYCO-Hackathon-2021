@@ -195,15 +195,15 @@ public class HomeGui extends JFrame implements ActionListener {
 	    title.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 40));
 	    title.setBackground(new Color(80, 120, 147));
 	    
-	    Icon plusIcon = new ImageIcon("src/plus.png");
-	    addCourse = new JButton(plusIcon);
-	    addCourse.addActionListener(this);
-	    this.add(addCourse);
-	    addCourse.setHorizontalAlignment(JButton.RIGHT);
-	    addCourse.setBackground(new Color(80, 120, 147));
+//	    Icon plusIcon = new ImageIcon("src/plus.png");
+//	    addCourse = new JButton(plusIcon);
+//	    addCourse.addActionListener(this);
+//	    this.add(addCourse);
+//	    addCourse.setHorizontalAlignment(JButton.RIGHT);
+//	    addCourse.setBackground(new Color(80, 120, 147));
 	    
 	    header.add(title);
-	    header.add(addCourse);
+//	    header.add(addCourse);
 	    
 	    StyledDocument doc = title.getStyledDocument();
 	    SimpleAttributeSet center = new SimpleAttributeSet();
@@ -232,14 +232,14 @@ public class HomeGui extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(courseCounter <= 7 && e.getSource() == addCourse) {
-			//AddCourse courseWindow = new AddCourse();
-			courseCounter++;
-			AddCourse course = new AddCourse(d, courseCounter);
-	    	course.setBounds(500, 500, 550, 350);
-	    	course.setBackground(new Color(211,211,211));
-	    	course.setVisible(true);
-		}
+//		if(courseCounter <= 7 && e.getSource() == addCourse) {
+//			//AddCourse courseWindow = new AddCourse();
+//			courseCounter++;
+//			AddCourse course = new AddCourse(d, courseCounter);
+//	    	course.setBounds(500, 500, 550, 350);
+//	    	course.setBackground(new Color(211,211,211));
+//	    	course.setVisible(true);
+//		}
 		if(e.getSource() == course1) {
 			System.out.println("course1 called");
 			LinkOpener.openLink(d.getCourseLink(0));
