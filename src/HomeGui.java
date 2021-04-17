@@ -213,7 +213,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    JPanel bottomFooter = new JPanel();
 	    bottomFooter.setBackground(new Color(160, 187, 92));
 	    footer = new JTextPane();
-	    footer.setText("test test");
+	    footer.setText("Click \'edit\' to input information!");
 	    footer.setEditable(false);
 	    footer.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 20));
 	    footer.setBackground(new Color(160, 187, 92));
