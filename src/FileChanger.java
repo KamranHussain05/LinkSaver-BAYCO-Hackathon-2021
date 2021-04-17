@@ -67,7 +67,7 @@ public class FileChanger {
 			fileReader.close();
 
 		} catch (FileNotFoundException e) {
-			System.out.println("File not found in readFile()");
+			System.out.println("File is not found, stacktrace: ");
 			e.printStackTrace();
 		}
 	}
@@ -111,7 +111,6 @@ public class FileChanger {
         
         reader.close();
         
-        // new BufferedReader to start at line 1
         BufferedReader lineReader = new BufferedReader(new FileReader("Data/data.txt"));
         
         for (int i = 0; i < lineNum; i++) {
