@@ -1,14 +1,11 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-
+import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
 
-// Author: Kamran Hussain
-// Date: 4/16/2021
-// Rev 04
-// Notes: Closed
+// i steal kamran's credits
 
 @SuppressWarnings("serial")
 public class AddCourse extends JFrame implements ActionListener {
@@ -86,6 +83,18 @@ public class AddCourse extends JFrame implements ActionListener {
     calc.setText("Class Added!");
     calc.setBackground(new Color(97, 213, 109));
     calc.setEnabled(false);
+    
+    // sleeps
+    try {
+		TimeUnit.MILLISECONDS.sleep(200);
+	} catch (InterruptedException e1) {
+		System.out.println("AddCourse sleep timer error.");
+		e1.printStackTrace();
+	}
+    
+    // destroys window
+    setVisible(false);
+    dispose();
     
     HomeGui.refresh();
   }
