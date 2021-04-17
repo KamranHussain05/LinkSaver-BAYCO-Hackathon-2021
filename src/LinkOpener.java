@@ -15,6 +15,7 @@ public class LinkOpener {
 				// TODO Auto-generated catch block
 				System.out.println("error opening link");
 				e.printStackTrace();
+				//
 			}
 		}
 	}
