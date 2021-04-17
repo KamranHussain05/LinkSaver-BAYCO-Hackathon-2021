@@ -61,7 +61,7 @@ public AddCourse(Data d, int num) {
 
     calc = new JButton("Add Class");
     calc.addActionListener(this);
-    calc.setBackground(new Color(45, 49, 66));
+    calc.setBackground(new Color(79, 93, 117));
     calc.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 20));
     calc.setForeground(new Color(255,255,255));
 
