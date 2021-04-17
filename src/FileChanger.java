@@ -1,9 +1,7 @@
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
@@ -28,6 +26,7 @@ public class FileChanger {
 		//tries to scan, if error, then returns false
 		try { 
 			File file = new File("Data/data.txt");
+			@SuppressWarnings({ "unused", "resource" })
 			Scanner fileReader = new Scanner(file);
 			isFile = true;
 		} catch (FileNotFoundException e) {
