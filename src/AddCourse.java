@@ -4,9 +4,13 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
-
-
 @SuppressWarnings("serial")
+/**
+ * Used by HomeGui to alter the Data object through another GUI
+ * 
+ * @author Alex Wang, Connor Chow, Kamran Hussain
+ * @version 4/17/2021
+ */
 public class AddCourse extends JFrame implements ActionListener {
   private JTextField inputCourseName, inputMeetingLink, inputCourseLink; //input variables
   private String courseName, courseLink, meetingLink;
@@ -16,6 +20,11 @@ public class AddCourse extends JFrame implements ActionListener {
   
   
   @SuppressWarnings("static-access")
+/**
+ * Creates an AddCourse
+ * @param d
+ * @param num
+ */
 public AddCourse(Data d, int num) {
     super("Class Scheduler");
     
