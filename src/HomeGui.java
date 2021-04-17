@@ -222,7 +222,6 @@ public class HomeGui extends JFrame implements ActionListener {
 		}
 		else if(e.getSource() == course2) {
 			System.out.println("course2 called");
-
 			LinkOpener.openLink(d.getCourseLink(1));
 			LinkOpener.openLink(d.getMeetingLink(1));
 		}
@@ -265,37 +264,37 @@ public class HomeGui extends JFrame implements ActionListener {
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
 		}
-		else if(e.getSource() == course2) {
+		else if(e.getSource() == editCourse2) {
 			System.out.println("edit course2 called");
 			LinkOpener.openLink(d.getCourseLink(1));
 			LinkOpener.openLink(d.getMeetingLink(1));
 		}
-		else if(e.getSource() == course3) {
+		else if(e.getSource() == editCourse3) {
 			System.out.println("course3 called");
 			LinkOpener.openLink(d.getCourseLink(2));
 			LinkOpener.openLink(d.getMeetingLink(2));
 		}
-		else if(e.getSource() == course4) {
+		else if(e.getSource() == editCourse4) {
 			System.out.println("course4 called");
 			LinkOpener.openLink(d.getCourseLink(3));
 			LinkOpener.openLink(d.getMeetingLink(3));
 		}
-		else if(e.getSource() == course5) {
+		else if(e.getSource() == editCourse5) {
 			System.out.println("course5 called");
 			LinkOpener.openLink(d.getCourseLink(4));
 			LinkOpener.openLink(d.getMeetingLink(4));
 		}
-		else if(e.getSource() == course6) {
+		else if(e.getSource() == editCourse6) {
 			System.out.println("course6 called");
 			LinkOpener.openLink(d.getCourseLink(5));
 			LinkOpener.openLink(d.getMeetingLink(5));
 		}
-		else if(e.getSource() == course7) {
+		else if(e.getSource() == editCourse7) {
 			System.out.println("course7 called");
 			LinkOpener.openLink(d.getCourseLink(6));
 			LinkOpener.openLink(d.getMeetingLink(6));
 		}
-		else if(e.getSource() == course8) {
+		else if(e.getSource() == editCourse8) {
 			System.out.println("course8 called");
 			LinkOpener.openLink(d.getCourseLink(7));
 			LinkOpener.openLink(d.getMeetingLink(7));
