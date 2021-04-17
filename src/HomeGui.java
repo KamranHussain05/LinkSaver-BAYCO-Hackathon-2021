@@ -247,6 +247,10 @@ public class HomeGui extends JFrame implements ActionListener {
 	    courseWindow.setBounds(500, 500, 1200, 650);
 	    courseWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    courseWindow.setBackground(new Color(211,211,211));
-	    courseWindow.setVisible(true);
+	    
+	    ImageIcon logo = new ImageIcon("src/logo.png");
+		courseWindow.setIconImage(logo.getImage());
+	    
+		courseWindow.setVisible(true);
 	}
 }
