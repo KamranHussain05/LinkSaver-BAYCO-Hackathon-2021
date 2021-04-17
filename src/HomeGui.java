@@ -5,28 +5,31 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 
+/**
+ * Used to show the GUI of the Linksaver and backend logistics
+ * 
+ * @author Alex Wang, Connor Chow, Kamran Hussain
+ * @version 4/17/2021
+ */
 public class HomeGui extends JFrame implements ActionListener {
 	
 	private static final long serialVersionUID = 1L;
 	private Data d;
 	private JTextPane footer;
 	private JTextPane title;
-	private static JButton course1;
-	private static JButton course2;
-	private static JButton course3;
-	private static JButton course4;
-	private static JButton course5;
-	private static JButton course6;
-	private static JButton course7;
-	private static JButton course8;
-	
-	private static JButton editCourse1,editCourse2, editCourse3, editCourse4, editCourse5, editCourse6, editCourse7, editCourse8;
+	private static JButton course1, course2, course3, course4, course5, course6, course7, course8;
+	private static JButton editCourse1, editCourse2, editCourse3, editCourse4, editCourse5, editCourse6, editCourse7, editCourse8;
 	
 	@SuppressWarnings("deprecation")
+	/**
+	 * Creates a HomeGui
+	 */
 	public HomeGui() {
 		super("Home");
 		
+		//data is initialized and inputted into HomeGui
 		d = new Data(8);
+		//file is checked and stored into Data object 'd'
 		if(FileChanger.checkFile())
 		{
 			FileChanger.readFile(d);
@@ -37,6 +40,7 @@ public class HomeGui extends JFrame implements ActionListener {
 			FileChanger.readFile(d);
 		}
 		
+		//Panel
 	    JPanel panel = new JPanel();
 	    GridLayout layout = new GridLayout(2,4);
 	    layout.setVgap(5);
@@ -44,7 +48,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    panel.setLayout(layout);
 	    panel.setBackground(new Color(255,255,255));
 	
-	    //Tile 1
+	    //Tile 1 & its edit button
 	    course1 = new JButton();
 	    course1.setText(Data.getCourseName(0));
 	    course1.addActionListener(this);
@@ -62,7 +66,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course1.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course1);
 	    
-	    //Tile 2
+	    //Tile 2 & its edit button
 	    course2 = new JButton();
 	    course2.setText(Data.getCourseName(1));
 	    course2.addActionListener(this);
@@ -80,7 +84,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course2.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course2);
 	    
-	    //Tile 3
+	    //Tile 3 & its edit button
 	    course3 = new JButton();
 	    course3.setText(Data.getCourseName(2));
 	    course3.addActionListener(this);
@@ -99,7 +103,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    this.add(course3);
 	    panel.add(course3);
 	    
-	    //Tile 4
+	    //Tile 4 & its edit button
 	    course4 = new JButton();
 	    course4.setText(Data.getCourseName(3));
 	    course4.enable(false);
@@ -118,7 +122,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course4.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course4);
 	    
-	    //Tile 5
+	    //Tile 5 & its edit button
 	    course5 = new JButton();
 	    course5.setText(Data.getCourseName(4));
 	    course5.addActionListener(this);
@@ -136,7 +140,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course5.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course5);
 	    
-	    //Tile 6
+	    //Tile 6 & its edit button
 	    course6 = new JButton();
 	    course6.setText(Data.getCourseName(5));
 	    course6.addActionListener(this);
@@ -154,7 +158,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course6.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course6);
 	    
-	    //Tile 7
+	    //Tile 7 & its edit button
 	    course7 = new JButton();
 	    course7.setText(Data.getCourseName(6));
 	    course7.addActionListener(this);
@@ -172,7 +176,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course7.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course7);
 	    
-	    //Tile 8
+	    //Tile 8 & its edit button
 	    course8 = new JButton();
 	    course8.setText(Data.getCourseName(7));
 	    course8.addActionListener(this);
@@ -190,7 +194,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course8.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course8);
 	
-	    //The Home Page Header
+	    //Homepage header
 	    JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    title = new JTextPane();
@@ -207,7 +211,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
 	    doc.setParagraphAttributes(0, doc.getLength(), center, false);
 	    
-	    //Home Page Footer
+	    //Homepage footer
 	    JPanel bottomFooter = new JPanel();
 	    bottomFooter.setBackground(new Color(255, 255, 255));
 	    footer = new JTextPane();
@@ -223,7 +227,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    StyleConstants.setAlignment(center2, StyleConstants.ALIGN_CENTER);
 	    doc2.setParagraphAttributes(0, doc2.getLength(), center, false);
 	    
-	    //
+	    //Container
 	    Container c = getContentPane();
 	    c.add(panel, BorderLayout.CENTER);
 	    c.add(header, BorderLayout.BEFORE_FIRST_LINE);
@@ -231,127 +235,138 @@ public class HomeGui extends JFrame implements ActionListener {
 	  }
 
 	@Override
+	/**
+	 * Checks when a button is called and redirects to the right process
+	 * @param e ActionEvent from HomeGui JButtons
+	 */
 	public void actionPerformed(ActionEvent e) {
 		ImageIcon logo = new ImageIcon("src/logo.png");
 		
 		if(e.getSource() == course1) {
+			//Opens links for course1
 			System.out.println("course1 called");
 			LinkOpener.openLink(d.getCourseLink(0));
 			LinkOpener.openLink(d.getMeetingLink(0));
-
 		}
 		if(e.getSource() == course2) {
+			//Opens links for course2
 			System.out.println("course2 called");
 			LinkOpener.openLink(d.getCourseLink(1));
 			LinkOpener.openLink(d.getMeetingLink(1));
 		}
 		if(e.getSource() == course3) {
+			//Opens links for course3
 			System.out.println("course3 called");
 			LinkOpener.openLink(d.getCourseLink(2));
 			LinkOpener.openLink(d.getMeetingLink(2));
 		}
 		if(e.getSource() == course4) {
+			//Opens links for course4
 			System.out.println("course4 called");
 			LinkOpener.openLink(d.getCourseLink(3));
 			LinkOpener.openLink(d.getMeetingLink(3));
 		}
 		if(e.getSource() == course5) {
+			//Opens links for course5
 			System.out.println("course5 called");
 			LinkOpener.openLink(d.getCourseLink(4));
 			LinkOpener.openLink(d.getMeetingLink(4));
 		}
 		if(e.getSource() == course6) {
+			//Opens links for course6
 			System.out.println("course6 called");
 			LinkOpener.openLink(d.getCourseLink(5));
 			LinkOpener.openLink(d.getMeetingLink(5));
 		}
 		if(e.getSource() == course7) {
+			//Opens links for course7
 			System.out.println("course7 called");
 			LinkOpener.openLink(d.getCourseLink(6));
 			LinkOpener.openLink(d.getMeetingLink(6));
 		}
 		if(e.getSource() == course8) {
+			//Opens links for course8
 			System.out.println("course8 called");
 			LinkOpener.openLink(d.getCourseLink(7));
 			LinkOpener.openLink(d.getMeetingLink(7));
 		}
-		
-		//**************************************************************************
 		if(e.getSource() == editCourse1) {
+			//Opens an AddCourse for course1 to edit its links/name
 			System.out.println("edit course1 called");
 			AddCourse course = new AddCourse(d, 0);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
-	    	
-	    	
 	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse2) {
+			//Opens an AddCourse for course2 to edit its links/name
 			System.out.println("edit course2 called");
 			AddCourse course = new AddCourse(d, 1);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
-	    	
 	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse3) {
+			//Opens an AddCourse for course3 to edit its links/name
 			System.out.println("edit course3 called");
 			AddCourse course = new AddCourse(d, 2);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
-	    	
 	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse4) {
+			//Opens an AddCourse for course4 to edit its links/name
 			System.out.println("edit course4 called");
 			AddCourse course = new AddCourse(d, 3);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
-	    	
 	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse5) {
+			//Opens an AddCourse for course5 to edit its links/name
 			System.out.println("edit course5 called");
 			AddCourse course = new AddCourse(d, 4);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
-	    	
 	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse6) {
+			//Opens an AddCourse for course6 to edit its links/name
 			System.out.println("edit course6 called");
 			AddCourse course = new AddCourse(d, 5);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
-	    	
 	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse7) {
+			//Opens an AddCourse for course7 to edit its links/name
 			System.out.println("edit course7 called");
 			AddCourse course = new AddCourse(d, 6);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
-	    	
 	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse8) {
+			//Opens an AddCourse for course8 to edit its links/name
 			System.out.println("edit course8 called");
 			AddCourse course = new AddCourse(d, 7);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
-	    	
 	    	course.setIconImage(logo.getImage());
 		}
 	}
 	
+	/**
+	 * refreshes HomeGui to display the correct names
+	 */
 	public static void refresh() {
 	    course1.setText(Data.getCourseName(0));
 	    course2.setText(Data.getCourseName(1));
@@ -363,7 +378,11 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course8.setText(Data.getCourseName(7));
 	}
 	
-	public static void main(String [] args) {
+	/**
+	 * Main method
+	 * @param args
+	 */
+	public static void main(String[] args) {
 		HomeGui courseWindow = new HomeGui();
 	    courseWindow.setBounds(500, 500, 1200, 650);
 	    courseWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
