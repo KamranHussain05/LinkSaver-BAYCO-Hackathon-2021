@@ -53,7 +53,6 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course1 = new JButton();
 	    course1.setText(Data.getCourseName(0));
 	    course1.setEnabled(true);
-	    course1.setMargin(new Insets(10,10,10,10));
 	    course1.setBackground(new Color(230, 183, 97));
 	    course1.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    course1.addActionListener(this);
@@ -61,7 +60,6 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    JButton editCourse1 = new JButton();
 	    editCourse1.setText("Edit");
-	    editCourse1.setMargin(new Insets(10,10,10,10));
 	    course1Panel.add(editCourse1, BorderLayout.PAGE_START);
 	    course1Panel.add(editCourse1, BorderLayout.EAST);
 	    
