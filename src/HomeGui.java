@@ -243,6 +243,8 @@ public class HomeGui extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		ImageIcon logo = new ImageIcon("src/logo.png");
+		
 //		if(courseCounter <= 7 && e.getSource() == addCourse) {
 //			//AddCourse courseWindow = new AddCourse();
 //			courseCounter++;
@@ -300,6 +302,9 @@ public class HomeGui extends JFrame implements ActionListener {
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
+	    	
+	    	
+	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse2) {
 			System.out.println("edit course2 called");
@@ -307,6 +312,8 @@ public class HomeGui extends JFrame implements ActionListener {
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
+	    	
+	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse3) {
 			System.out.println("edit course3 called");
@@ -314,6 +321,8 @@ public class HomeGui extends JFrame implements ActionListener {
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
+	    	
+	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse4) {
 			System.out.println("edit course4 called");
@@ -321,6 +330,8 @@ public class HomeGui extends JFrame implements ActionListener {
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
+	    	
+	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse5) {
 			System.out.println("edit course5 called");
@@ -328,6 +339,8 @@ public class HomeGui extends JFrame implements ActionListener {
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
+	    	
+	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse6) {
 			System.out.println("edit course6 called");
@@ -335,6 +348,8 @@ public class HomeGui extends JFrame implements ActionListener {
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
+	    	
+	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse7) {
 			System.out.println("edit course7 called");
@@ -342,6 +357,8 @@ public class HomeGui extends JFrame implements ActionListener {
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
+	    	
+	    	course.setIconImage(logo.getImage());
 		}
 		if(e.getSource() == editCourse8) {
 			System.out.println("edit course8 called");
@@ -349,6 +366,8 @@ public class HomeGui extends JFrame implements ActionListener {
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
+	    	
+	    	course.setIconImage(logo.getImage());
 		}
 	}
 	

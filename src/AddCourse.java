@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
 
-// i steal kamran's credits
 
 @SuppressWarnings("serial")
 public class AddCourse extends JFrame implements ActionListener {
@@ -27,7 +26,8 @@ public class AddCourse extends JFrame implements ActionListener {
     layout.setVgap(30);
     panel.setLayout(layout);
     panel.setBackground(new Color(200,200,200));
-
+    
+    
     JLabel nameLabel = new JLabel("   Course Name:\n");
     nameLabel.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
     panel.add(nameLabel);
@@ -74,12 +74,13 @@ public class AddCourse extends JFrame implements ActionListener {
     courseLink = inputCourseLink.getText();
     meetingLink = inputMeetingLink.getText();
     
+
+    
     String s = courseName + ";" + courseLink + ";" + meetingLink;
     d.replaceStrings(num, s);
     try {
 		FileChanger.writeFile(d.returnStrings());
 	} catch (IOException e1) {
-		// TODO Auto-generated catch block
 		System.out.println("AddCourse writing file failed");
 		e1.printStackTrace();
 	}
