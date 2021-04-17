@@ -63,6 +63,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    editCourse1.setText("Edit");
 	    editCourse1.setMargin(new Insets(10,10,10,10));
 	    course1Panel.add(editCourse1, BorderLayout.PAGE_START);
+	    course1Panel.add(editCourse1, BorderLayout.EAST);
 	    
 	    course1Panel.setLayout(course1Layout);
 	    course1Panel.add(course1, BorderLayout.PAGE_END);
