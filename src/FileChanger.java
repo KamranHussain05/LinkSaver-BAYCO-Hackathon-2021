@@ -7,19 +7,26 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
+/**
+ * Used to create a file called "data.txt" under the folder "Data" in the project directory,
+ * read the file on startup (or create one if there isn't one present)
+ * and write to it as changes occur on HomeGui/AddCourse
+ * 
+ * @author Alex Wang, Connor Chow, Kamran Hussain
+ * @version 4/16/2021
+ */
 public class FileChanger {
 
 	/**
-	 * Method to run every time program starts, creates a file if there is no file,
-	 * and returns true if file was present
+	 * Used to the check if there is a 'data.txt' file under 'BAYCO-Hackathon-2021/Data'
 	 * 
-	 * @return Boolean, if true -> file present from save, if false -> new file
-	 *         created
+	 * @return whether a file is present or not (true if file, false if none)
 	 */
 	public static Boolean checkFile() {
 		Boolean isFile;
 
-		try {
+		//tries to scan, if error, then returns false
+		try { 
 			File file = new File("Data/data.txt");
 			Scanner fileReader = new Scanner(file);
 			isFile = true;
@@ -31,11 +38,13 @@ public class FileChanger {
 	}
 
 	/**
-	 * Creates new file data.txt
-	 * Only call if checkFile() returns false
-	 * @return if file was successfully created
+	 * Creates new file 'data.txt'
+	 * 
+	 * @pre Only call if checkFile() returns false
 	 */
 	public static void createFile() {
+		
+		//tries to create file, error if not able to create one
 		try {
 			File file = new File("Data/data.txt");
 			file.createNewFile();
@@ -46,92 +55,51 @@ public class FileChanger {
 	}
 
 	/**
-	 * Only call if checkFile() returns true or createNewFile() returns true;
+	 * Reads 'data.txt' and inputs data into program (ex: links, courses, etc)
 	 * 
-	 * @pre Data d object needs to have 8 terms
-	 * @param d
-	 * @return String of file content
+	 * @pre Data d object needs to have 8 terms; Only call if checkFile() returns true or createNewFile() returns true
+	 * @post inputs data into Data object d
+	 * @param d Data object required from HomeGui to store link info
 	 */
 	public static void readFile(Data d) {
 		String data = ""; // initialize String
-		int num = 0;
+		int num = 0; //number for which line to start inputting into Data object d
+		//tries to read 'data.txt' and then input it into Data object d
 		try {
 			File file = new File("Data/data.txt");
 			Scanner fileReader = new Scanner(file);
 
+			//keeps reading for every line in 'data.txt'
 			while (fileReader.hasNextLine()) {
 				data = fileReader.nextLine();
 				d.replaceStrings(num, data);
 				num++;
 			}
-
 			fileReader.close();
-
-		} catch (FileNotFoundException e) {
+		} 
+		catch (FileNotFoundException e) {
 			System.out.println("File is not found, stacktrace: ");
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * Called to write to existing .txt file Only call if file is created
+	 * Called to write to 'data.txt' file 
 	 * 
-	 * @param info ArrayList of links and names
-	 * @throws IOException
+	 * @pre 'data.txt' has to be created
+	 * @param info ArrayList of strings being converted into 'data.txt' file
+	 * @throws IOException error if FileWriter runs into an issue with writing to 'data.txt'
 	 */
 	public static void writeFile(ArrayList<String> info) throws IOException {
 		FileWriter writer = new FileWriter("Data/data.txt");
 		
 		// loops through array
 		for (String s : info) {
-			// write each element to txt
+			// write each element to 'data.txt'
 			writer.write(s + "\n");
 		}
 
 		writer.close();
 	}
 	
-	/**
-	 * Overloaded function with line number to write
-	 * @param info
-	 * @throws IOException
-	 */
-//	public static void writeFile(ArrayList<String> info, int lineNum) throws IOException {
-//		FileWriter writer = new FileWriter("Data/data.txt");
-//		BufferedReader reader = new BufferedReader(new FileReader("Data/data.txt"));
-//		
-//		String oldContent = "";
-//		
-//		// reads old content
-//		String line = reader.readLine();
-//        while (line != null) {
-//            oldContent = oldContent + line + System.lineSeparator();
-//             
-//            line = reader.readLine();
-//        }
-//        
-//        reader.close();
-//        
-//        BufferedReader lineReader = new BufferedReader(new FileReader("Data/data.txt"));
-//        
-//        for (int i = 0; i < lineNum; i++) {
-//            lineReader.readLine();
-//        }
-//
-//        String oldString = lineReader.readLine();
-//        String newString = "";
-//        
-//        // loops through arrayList
-//     	for (String s : info) {
-//   			// write each element to newString
-//   			newString += s; 
-//   		}        
-//        
-//        String newContent = oldContent.replaceAll(oldString, newString);
-//		
-//		writer.write(newContent);
-//
-//		writer.close();
-//	}
-
 }
