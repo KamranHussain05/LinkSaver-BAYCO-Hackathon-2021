@@ -22,7 +22,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	
 	@SuppressWarnings("deprecation")
 	/**
-	 * Creates a HomeGui
+	 * Creates a HomeGui (no args as parameters)
 	 */
 	public HomeGui() {
 		super("Home");
