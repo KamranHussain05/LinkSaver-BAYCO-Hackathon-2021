@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
-
-
 @SuppressWarnings("serial")
 public class AddCourse extends JFrame implements ActionListener {
   private JTextField inputCourseName, inputMeetingLink, inputCourseLink; //input variables

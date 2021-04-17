@@ -30,23 +30,21 @@ public class HomeGui extends JFrame implements ActionListener {
 		//data is initialized and inputted into HomeGui
 		d = new Data(8);
 		//file is checked and stored into Data object 'd'
-		if(FileChanger.checkFile())
-		{
+		if(FileChanger.checkFile()) {
 			FileChanger.readFile(d);
 		}
-		else
-		{
+		else {
 			FileChanger.createFile();
 			FileChanger.readFile(d);
 		}
 		
 		//Panel
-	    JPanel panel = new JPanel();
+	    JPanel main = new JPanel();
 	    GridLayout layout = new GridLayout(2,4);
 	    layout.setVgap(5);
 	    layout.setHgap(5);
-	    panel.setLayout(layout);
-	    panel.setBackground(new Color(255,255,255));
+	    main.setLayout(layout);
+	    main.setBackground(new Color(255,255,255));
 	
 	    //Tile 1 & its edit button
 	    course1 = new JButton();
@@ -64,7 +62,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course1.setHorizontalAlignment(JTextField.CENTER);
 	    course1.setBackground(new Color(191, 192, 192));
 	    course1.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
-	    panel.add(course1);
+	    main.add(course1);
 	    
 	    //Tile 2 & its edit button
 	    course2 = new JButton();
@@ -82,7 +80,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course2.setHorizontalAlignment(JTextField.CENTER);
 	    course2.setBackground(new Color(191, 192, 192));
 	    course2.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
-	    panel.add(course2);
+	    main.add(course2);
 	    
 	    //Tile 3 & its edit button
 	    course3 = new JButton();
@@ -101,7 +99,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course3.setBackground(new Color(191, 192, 192));
 	    course3.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    this.add(course3);
-	    panel.add(course3);
+	    main.add(course3);
 	    
 	    //Tile 4 & its edit button
 	    course4 = new JButton();
@@ -120,7 +118,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course4.setHorizontalAlignment(JTextField.CENTER);
 	    course4.setBackground(new Color(191, 192, 192));
 	    course4.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
-	    panel.add(course4);
+	    main.add(course4);
 	    
 	    //Tile 5 & its edit button
 	    course5 = new JButton();
@@ -138,7 +136,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course5.setHorizontalAlignment(JTextField.CENTER);
 	    course5.setBackground(new Color(191, 192, 192));
 	    course5.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
-	    panel.add(course5);
+	    main.add(course5);
 	    
 	    //Tile 6 & its edit button
 	    course6 = new JButton();
@@ -156,7 +154,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course6.setHorizontalAlignment(JTextField.CENTER);
 	    course6.setBackground(new Color(191, 192, 192));
 	    course6.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
-	    panel.add(course6);
+	    main.add(course6);
 	    
 	    //Tile 7 & its edit button
 	    course7 = new JButton();
@@ -174,7 +172,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course7.setHorizontalAlignment(JTextField.CENTER);
 	    course7.setBackground(new Color(191, 192, 192));
 	    course7.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
-	    panel.add(course7);
+	    main.add(course7);
 	    
 	    //Tile 8 & its edit button
 	    course8 = new JButton();
@@ -192,7 +190,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course8.setHorizontalAlignment(JTextField.CENTER);
 	    course8.setBackground(new Color(191, 192, 192));
 	    course8.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
-	    panel.add(course8);
+	    main.add(course8);
 	
 	    //Homepage header
 	    JPanel header = new JPanel();
@@ -229,7 +227,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    //Container
 	    Container c = getContentPane();
-	    c.add(panel, BorderLayout.CENTER);
+	    c.add(main, BorderLayout.CENTER);
 	    c.add(header, BorderLayout.BEFORE_FIRST_LINE);
 	    c.add(bottomFooter, BorderLayout.AFTER_LAST_LINE);
 	  }
