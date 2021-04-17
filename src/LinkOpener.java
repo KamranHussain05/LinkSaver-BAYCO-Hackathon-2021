@@ -44,9 +44,9 @@ public class LinkOpener {
 		if (url == "")
 			return false;
 		// http header check
-		else if (url.contains("http://") == false && url.contains("https://") == false) {
+		else if (url.contains("http://www.") == false && url.contains("https://www.") == false) {
 			// new string that includes header
-			newUrl = "https://" + url;
+			newUrl = "https://www." + url;
 			builtString = true;
 		}
 
