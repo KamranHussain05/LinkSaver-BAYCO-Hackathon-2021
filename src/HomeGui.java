@@ -21,6 +21,8 @@ public class HomeGui extends JFrame implements ActionListener {
 	private static JButton course8;
 	private static JButton addCourse;
 	
+	private static JButton editCourse1,editCourse2, editCourse3, editCourse4, editCourse5, editCourse6, editCourse7, editCourse8;
+	
 	@SuppressWarnings("deprecation")
 	public HomeGui() {
 		super("Home");
@@ -47,32 +49,25 @@ public class HomeGui extends JFrame implements ActionListener {
 	    panel.setBackground(new Color(200,200,200));
 	
 	    //Tile 1
-	    JPanel course1Panel = new JPanel();
-	    GridLayout course1Layout = new GridLayout(4,4);
-	    
 	    course1 = new JButton();
-	    course1.setText(Data.getCourseName(0));
-	    course1.setEnabled(true);
+	    course1.setText(Data.getCourseName(1));
+	    course1.setEnabled(false);
+	    
+	    editCourse1 = new JButton();
+	    editCourse1.setText("Edit");
+	    course1.add(editCourse1);
+	    
+	    course1.setHorizontalAlignment(JTextField.CENTER);
 	    course1.setBackground(new Color(230, 183, 97));
 	    course1.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
-	    course1.addActionListener(this);
-	    
-	    
-	    JButton editCourse1 = new JButton();
-	    editCourse1.setText("Edit");
-	    course1Panel.add(editCourse1, BorderLayout.PAGE_START);
-	    course1Panel.add(editCourse1, BorderLayout.EAST);
-	    
-	    course1Panel.setLayout(course1Layout);
-	    course1Panel.add(course1, BorderLayout.PAGE_END);
-	    panel.add(course1Panel);
+	    panel.add(course1);
 	    
 	    //Tile 2
 	    course2 = new JButton();
 	    course2.setText(Data.getCourseName(1));
 	    course2.setEnabled(false);
 	    
-	    JButton editCourse2 = new JButton();
+	    editCourse2 = new JButton();
 	    editCourse2.setText("Edit");
 	    course2.add(editCourse2);
 	    
@@ -86,7 +81,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course3.setText(Data.getCourseName(2));
 	    course3.enable(false);
 	    
-	    JButton editCourse3 = new JButton();
+	    editCourse3 = new JButton();
 	    editCourse3.setText("Edit");
 	    course3.add(editCourse3);
 	    
@@ -100,7 +95,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course4.setText(Data.getCourseName(3));
 	    course4.enable(false);
 	    
-	    JButton editCourse4 = new JButton();
+	    editCourse4 = new JButton();
 	    editCourse4.setText("Edit");
 	    course4.add(editCourse4);
 	    
@@ -114,7 +109,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course5.setText(Data.getCourseName(4));
 	    course5.enable(false);
 	    
-	    JButton editCourse5 = new JButton();
+	    editCourse5 = new JButton();
 	    editCourse5.setText("Edit");
 	    course5.add(editCourse5);
 	    
@@ -128,7 +123,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course6.setText(Data.getCourseName(5));
 	    course6.enable(false);
 	    
-	    JButton editCourse6 = new JButton();
+	    editCourse6 = new JButton();
 	    editCourse6.setText("Edit");
 	    course6.add(editCourse6);
 	    
@@ -142,7 +137,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course7.setText(Data.getCourseName(6));
 	    course7.enable(false);
 	    
-	    JButton editCourse7 = new JButton();
+	    editCourse7 = new JButton();
 	    editCourse7.setText("Edit");
 	    course7.add(editCourse7);
 	    
@@ -156,7 +151,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course8.setText(Data.getCourseName(7));
 	    course8.enable(false);
 	    
-	    JButton editCourse8 = new JButton();
+	    editCourse8 = new JButton();
 	    editCourse8.setText("Edit");
 	    course8.add(editCourse8);
 	    
@@ -228,6 +223,50 @@ public class HomeGui extends JFrame implements ActionListener {
 		else if(e.getSource() == course2) {
 			System.out.println("course2 called");
 
+			LinkOpener.openLink(d.getCourseLink(1));
+			LinkOpener.openLink(d.getMeetingLink(1));
+		}
+		else if(e.getSource() == course3) {
+			System.out.println("course3 called");
+			LinkOpener.openLink(d.getCourseLink(2));
+			LinkOpener.openLink(d.getMeetingLink(2));
+		}
+		else if(e.getSource() == course4) {
+			System.out.println("course4 called");
+			LinkOpener.openLink(d.getCourseLink(3));
+			LinkOpener.openLink(d.getMeetingLink(3));
+		}
+		else if(e.getSource() == course5) {
+			System.out.println("course5 called");
+			LinkOpener.openLink(d.getCourseLink(4));
+			LinkOpener.openLink(d.getMeetingLink(4));
+		}
+		else if(e.getSource() == course6) {
+			System.out.println("course6 called");
+			LinkOpener.openLink(d.getCourseLink(5));
+			LinkOpener.openLink(d.getMeetingLink(5));
+		}
+		else if(e.getSource() == course7) {
+			System.out.println("course7 called");
+			LinkOpener.openLink(d.getCourseLink(6));
+			LinkOpener.openLink(d.getMeetingLink(6));
+		}
+		else if(e.getSource() == course8) {
+			System.out.println("course8 called");
+			LinkOpener.openLink(d.getCourseLink(7));
+			LinkOpener.openLink(d.getMeetingLink(7));
+		}
+		
+		//**************************************************************************
+		else if(e.getSource() == editCourse1) {
+			System.out.println("edit course1 called");
+			AddCourse course = new AddCourse(d, 0);
+	    	course.setBounds(500, 500, 550, 350);
+	    	course.setBackground(new Color(211,211,211));
+	    	course.setVisible(true);
+		}
+		else if(e.getSource() == course2) {
+			System.out.println("edit course2 called");
 			LinkOpener.openLink(d.getCourseLink(1));
 			LinkOpener.openLink(d.getMeetingLink(1));
 		}
