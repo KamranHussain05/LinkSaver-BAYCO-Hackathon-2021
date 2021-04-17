@@ -1,14 +1,13 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.plaf.ColorUIResource;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 
 public class HomeGui extends JFrame implements ActionListener {
 	
-	private int courseCounter;
+	private static final long serialVersionUID = 1L;
 	private Data d;
 	private JTextPane footer;
 	private JTextPane title;
@@ -20,7 +19,6 @@ public class HomeGui extends JFrame implements ActionListener {
 	private static JButton course6;
 	private static JButton course7;
 	private static JButton course8;
-	private  JButton addCourse;
 	
 	private static JButton editCourse1,editCourse2, editCourse3, editCourse4, editCourse5, editCourse6, editCourse7, editCourse8;
 	
@@ -28,7 +26,6 @@ public class HomeGui extends JFrame implements ActionListener {
 	public HomeGui() {
 		super("Home");
 		
-		courseCounter = 0;
 		d = new Data(8);
 		if(FileChanger.checkFile())
 		{
@@ -39,8 +36,6 @@ public class HomeGui extends JFrame implements ActionListener {
 			FileChanger.createFile();
 			FileChanger.readFile(d);
 		}
-		
-		AddCourse courseName = new AddCourse(d, courseCounter);
 		
 	    JPanel panel = new JPanel();
 	    GridLayout layout = new GridLayout(2,4);
@@ -195,6 +190,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course8.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course8);
 	
+	    //The Home Page Header
 	    JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    title = new JTextPane();
@@ -204,22 +200,14 @@ public class HomeGui extends JFrame implements ActionListener {
 	    title.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 40));
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
-	    
-//	    Icon plusIcon = new ImageIcon("src/plus.png");
-//	    addCourse = new JButton(plusIcon);
-//	    addCourse.addActionListener(this);
-//	    this.add(addCourse);
-//	    addCourse.setHorizontalAlignment(JButton.RIGHT);
-//	    addCourse.setBackground(new Color(80, 120, 147));
-	    
 	    header.add(title);
-//	    header.add(addCourse);
 	    
 	    StyledDocument doc = title.getStyledDocument();
 	    SimpleAttributeSet center = new SimpleAttributeSet();
 	    StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
 	    doc.setParagraphAttributes(0, doc.getLength(), center, false);
 	    
+	    //Home Page Footer
 	    JPanel bottomFooter = new JPanel();
 	    bottomFooter.setBackground(new Color(255, 255, 255));
 	    footer = new JTextPane();
@@ -235,6 +223,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    StyleConstants.setAlignment(center2, StyleConstants.ALIGN_CENTER);
 	    doc2.setParagraphAttributes(0, doc2.getLength(), center, false);
 	    
+	    //
 	    Container c = getContentPane();
 	    c.add(panel, BorderLayout.CENTER);
 	    c.add(header, BorderLayout.BEFORE_FIRST_LINE);
@@ -245,14 +234,6 @@ public class HomeGui extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		ImageIcon logo = new ImageIcon("src/logo.png");
 		
-//		if(courseCounter <= 7 && e.getSource() == addCourse) {
-//			//AddCourse courseWindow = new AddCourse();
-//			courseCounter++;
-//			AddCourse course = new AddCourse(d, courseCounter);
-//	    	course.setBounds(500, 500, 550, 350);
-//	    	course.setBackground(new Color(211,211,211));
-//	    	course.setVisible(true);
-//		}
 		if(e.getSource() == course1) {
 			System.out.println("course1 called");
 			LinkOpener.openLink(d.getCourseLink(0));
@@ -390,10 +371,6 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    ImageIcon logo = new ImageIcon("src/logo.png");
 		courseWindow.setIconImage(logo.getImage());
-		
-//		courseWindow.put("InternalFrame.activeTitleBackground", new ColorUIResource(Color.black ));
-//		courseWindow.put("InternalFrame.activeTitleForeground", new ColorUIResource(Color.WHITE));
-//		courseWindow.put("InternalFrame.titleFont", new Font("Dialog", Font.PLAIN, 11));
 	    
 		courseWindow.setVisible(true);
 	}

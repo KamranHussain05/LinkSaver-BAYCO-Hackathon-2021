@@ -15,7 +15,8 @@ public class AddCourse extends JFrame implements ActionListener {
   private int num;
   
   
-  public AddCourse(Data d, int num) {
+  @SuppressWarnings("static-access")
+public AddCourse(Data d, int num) {
     super("Class Scheduler");
     
     this.d = d;
