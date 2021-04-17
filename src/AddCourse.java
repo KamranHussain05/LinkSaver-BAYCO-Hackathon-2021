@@ -35,6 +35,7 @@ public class AddCourse extends JFrame implements ActionListener {
     inputCourseName.setHorizontalAlignment(JTextField.RIGHT);
     inputCourseName.setBackground(new Color(230,230,225));
     inputCourseName.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
+    inputCourseName.setText(d.getCourseName(num));
     panel.add(inputCourseName);
     
     JLabel courseLabel = new JLabel("   Course Link:\n");
@@ -44,6 +45,7 @@ public class AddCourse extends JFrame implements ActionListener {
     inputCourseLink.setHorizontalAlignment(JTextField.RIGHT);
     inputCourseLink.setBackground(new Color(225,225,225));
     inputCourseLink.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
+    inputCourseLink.setText(d.getCourseLink(num));
     panel.add(inputCourseLink);
 
     JLabel linkLabel = new JLabel("   Meeting Link:\n");
@@ -53,6 +55,7 @@ public class AddCourse extends JFrame implements ActionListener {
     inputMeetingLink.setHorizontalAlignment(JTextField.RIGHT);
     inputMeetingLink.setBackground(new Color(225,225,225));
     inputMeetingLink.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
+    inputMeetingLink.setText(d.getMeetingLink(num));
     panel.add(inputMeetingLink);
 
     calc = new JButton("Add Class");

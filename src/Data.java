@@ -36,9 +36,10 @@ public class Data {
 	public static String getCourseName(int n)
 	{
 		String s = strings.get(n);	
-		try {
+		if(s.indexOf(';') != -1) {
 			return s.substring(0, s.indexOf(';'));
-		} catch (Exception e) {
+		} 
+		else {
 			return "";
 		}
 		
@@ -46,14 +47,23 @@ public class Data {
 	public String getCourseLink(int n)
 	{
 		String s = strings.get(n);
-		return s.substring(s.indexOf(';')+1, s.lastIndexOf(';'));
-
-		
+		if(s.indexOf(';') != -1 && s.lastIndexOf(';') != -1)
+		{
+			return s.substring(s.indexOf(';')+1, s.lastIndexOf(';'));
+		} 
+		else {
+			return "";
+		}
 	}
 	public String getMeetingLink(int n)
 	{
 		String s = strings.get(n);
-		return s.substring(s.lastIndexOf(';')+1);
+		if(s.lastIndexOf(';') != -1) {
+			return s.substring(s.lastIndexOf(';')+1);
+		} 
+		else {
+			return "";
+		}
 	}
 	
 	

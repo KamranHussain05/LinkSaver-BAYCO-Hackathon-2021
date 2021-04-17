@@ -27,7 +27,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	public HomeGui() {
 		super("Home");
 		
-		courseCounter = -1;
+		courseCounter = 0;
 		d = new Data(8);
 		if(FileChanger.checkFile())
 		{
@@ -299,42 +299,42 @@ public class HomeGui extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == editCourse3) {
 			System.out.println("edit course3 called");
-			AddCourse course = new AddCourse(d, 1);
+			AddCourse course = new AddCourse(d, 2);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
 		}
 		if(e.getSource() == editCourse4) {
 			System.out.println("edit course4 called");
-			AddCourse course = new AddCourse(d, 1);
+			AddCourse course = new AddCourse(d, 3);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
 		}
 		if(e.getSource() == editCourse5) {
 			System.out.println("edit course5 called");
-			AddCourse course = new AddCourse(d, 1);
+			AddCourse course = new AddCourse(d, 4);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
 		}
 		if(e.getSource() == editCourse6) {
 			System.out.println("edit course6 called");
-			AddCourse course = new AddCourse(d, 1);
+			AddCourse course = new AddCourse(d, 5);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
 		}
 		if(e.getSource() == editCourse7) {
 			System.out.println("edit course7 called");
-			AddCourse course = new AddCourse(d, 1);
+			AddCourse course = new AddCourse(d, 6);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
 		}
 		if(e.getSource() == editCourse8) {
 			System.out.println("edit course8 called");
-			AddCourse course = new AddCourse(d, 1);
+			AddCourse course = new AddCourse(d, 7);
 	    	course.setBounds(500, 500, 550, 350);
 	    	course.setBackground(new Color(211,211,211));
 	    	course.setVisible(true);
