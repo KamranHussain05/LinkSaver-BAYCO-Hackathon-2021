@@ -6,14 +6,6 @@ import java.net.URL;
 
 public class LinkOpener {
 
-	public static void main(String[] args) {
-		System.out.println(urlValid(""));
-		System.out.println(urlValid("http://facebook.com"));
-		System.out.println(urlValid("httpgoogle."));
-		System.out.println(urlValid("https://fuhsd.schoology.com/course/2693222114/materials"));
-	}
-	
-	
 	public static void openLink(String s) {
 		if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
 
@@ -31,7 +23,7 @@ public class LinkOpener {
 	public static Boolean urlValid(String url) {
 		if (url == "")
 			return false;
-		
+
 		try {
 			new URL(url).toURI();
 			return true;
