@@ -30,39 +30,39 @@ public AddCourse(Data d, int num) {
     
     
     JLabel nameLabel = new JLabel("   Course Name:\n");
-    nameLabel.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
+    nameLabel.setFont(new Font("Montserrat", Font.PLAIN, 17));
     panel.add(nameLabel);
     inputCourseName = new JTextField(20);
     inputCourseName.setHorizontalAlignment(JTextField.RIGHT);
     inputCourseName.setBackground(new Color(230,230,225));
-    inputCourseName.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
+    inputCourseName.setFont(new Font("Montserrat", Font.PLAIN, 17));
     inputCourseName.setText(d.getCourseName(num));
     panel.add(inputCourseName);
     
     JLabel courseLabel = new JLabel("   Course Link:\n");
-    courseLabel.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
+    courseLabel.setFont(new Font("Montserrat", Font.PLAIN, 17));
     panel.add(courseLabel);
     inputCourseLink = new JTextField(20);
     inputCourseLink.setHorizontalAlignment(JTextField.RIGHT);
     inputCourseLink.setBackground(new Color(225,225,225));
-    inputCourseLink.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
+    inputCourseLink.setFont(new Font("Montserrat", Font.PLAIN, 17));
     inputCourseLink.setText(d.getCourseLink(num));
     panel.add(inputCourseLink);
 
     JLabel linkLabel = new JLabel("   Meeting Link:\n");
-    linkLabel.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
+    linkLabel.setFont(new Font("Montserrat", Font.PLAIN, 17));
     panel.add(linkLabel);
     inputMeetingLink = new JTextField(20);
     inputMeetingLink.setHorizontalAlignment(JTextField.RIGHT);
     inputMeetingLink.setBackground(new Color(225,225,225));
-    inputMeetingLink.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 17));
+    inputMeetingLink.setFont(new Font("Montserrat", Font.PLAIN, 17));
     inputMeetingLink.setText(d.getMeetingLink(num));
     panel.add(inputMeetingLink);
 
     calc = new JButton("Add Class");
     calc.addActionListener(this);
     calc.setBackground(new Color(79, 93, 117));
-    calc.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 20));
+    calc.setFont(new Font("Montserrat", Font.PLAIN, 20));
     calc.setForeground(new Color(255,255,255));
 
     Container c = getContentPane();
