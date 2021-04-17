@@ -60,8 +60,9 @@ public class AddCourse extends JFrame implements ActionListener {
 
     calc = new JButton("Add Class");
     calc.addActionListener(this);
-    calc.setBackground(new Color(0,215,215));
+    calc.setBackground(new Color(45, 49, 66));
     calc.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 20));
+    calc.setForeground(new Color(255,255,255));
 
     Container c = getContentPane();
     c.add(panel, BorderLayout.CENTER);

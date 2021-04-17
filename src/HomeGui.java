@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
@@ -56,9 +57,10 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    editCourse1 = new JButton();
 	    editCourse1.setText("Edit");
+	    editCourse1.setBackground(new Color(210,210,210));
 	    editCourse1.addActionListener(this);
 	    this.add(editCourse1);
-	    panel.add(course1);
+	    course1.add(editCourse1);
 	    
 	    course1.setHorizontalAlignment(JTextField.CENTER);
 	    course1.setBackground(new Color(191, 192, 192));
@@ -73,6 +75,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    editCourse2 = new JButton();
 	    editCourse2.setText("Edit");
+	    editCourse2.setBackground(new Color(210,210,210));
 	    editCourse2.addActionListener(this);
 	    this.add(editCourse2);
 	    course2.add(editCourse2);
@@ -90,6 +93,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    editCourse3 = new JButton();
 	    editCourse3.setText("Edit");
+	    editCourse3.setBackground(new Color(210,210,210));
 	    editCourse3.addActionListener(this);
 	    this.add(editCourse3);
 	    course3.add(editCourse3);
@@ -109,6 +113,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    editCourse4 = new JButton();
 	    editCourse4.setText("Edit");
+	    editCourse4.setBackground(new Color(210,210,210));
 	    editCourse4.addActionListener(this);
 	    this.add(editCourse4);
 	    course4.add(editCourse4);
@@ -126,6 +131,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    editCourse5 = new JButton();
 	    editCourse5.setText("Edit");
+	    editCourse5.setBackground(new Color(210,210,210));
 	    editCourse5.addActionListener(this);
 	    this.add(editCourse5);
 	    course5.add(editCourse5);
@@ -143,6 +149,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    editCourse6 = new JButton();
 	    editCourse6.setText("Edit");
+	    editCourse6.setBackground(new Color(210,210,210));
 	    editCourse6.addActionListener(this);
 	    this.add(editCourse6);
 	    course6.add(editCourse6);
@@ -160,6 +167,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    editCourse7 = new JButton();
 	    editCourse7.setText("Edit");
+	    editCourse7.setBackground(new Color(210,210,210));
 	    editCourse7.addActionListener(this);
 	    this.add(editCourse7);
 	    course7.add(editCourse7);
@@ -177,6 +185,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    editCourse8 = new JButton();
 	    editCourse8.setText("Edit");
+	    editCourse8.setBackground(new Color(210,210,210));
 	    editCourse8.addActionListener(this);
 	    this.add(editCourse8);
 	    course8.add(editCourse8);
@@ -362,6 +371,10 @@ public class HomeGui extends JFrame implements ActionListener {
 	    
 	    ImageIcon logo = new ImageIcon("src/logo.png");
 		courseWindow.setIconImage(logo.getImage());
+		
+//		courseWindow.put("InternalFrame.activeTitleBackground", new ColorUIResource(Color.black ));
+//		courseWindow.put("InternalFrame.activeTitleForeground", new ColorUIResource(Color.WHITE));
+//		courseWindow.put("InternalFrame.titleFont", new Font("Dialog", Font.PLAIN, 11));
 	    
 		courseWindow.setVisible(true);
 	}
