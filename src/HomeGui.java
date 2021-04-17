@@ -1,11 +1,16 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 
 public class HomeGui extends JFrame implements ActionListener {
 	
 	private int courseCounter;
 	private Data d;
+	private JTextPane footer;
+	private static JTextPane title;
 	private static JButton course1;
 	private static JButton course2;
 	private static JButton course3;
@@ -14,6 +19,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	private static JButton course6;
 	private static JButton course7;
 	private static JButton course8;
+	private static JButton addCourse;
 	
 	@SuppressWarnings("deprecation")
 	public HomeGui() {
@@ -35,8 +41,8 @@ public class HomeGui extends JFrame implements ActionListener {
 		
 	    JPanel panel = new JPanel();
 	    GridLayout layout = new GridLayout(2,4);
-	    layout.setVgap(10);
-	    layout.setHgap(10);
+	    layout.setVgap(5);
+	    layout.setHgap(5);
 	    panel.setLayout(layout);
 	    panel.setBackground(new Color(200,200,200));
 	
@@ -48,6 +54,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course1.setBackground(new Color(230, 183, 97));
 	    course1.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course1);
+	    course1.addActionListener(this);
 	    
 	    //Tile 2
 	    course2 = new JButton();
@@ -112,32 +119,84 @@ public class HomeGui extends JFrame implements ActionListener {
 	    course8.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
 	    panel.add(course8);
 	
-	    JButton title = new JButton("Course Planner");
-	    title.addActionListener(this);
-	    title.enable(false);
-	    title.setBackground(new Color(213, 109, 97));
+	    JPanel header = new JPanel();
+	    header.setBackground(new Color(80, 120, 147));
+	    title = new JTextPane();
+	    title.setText("Schedule Planner");
+	    title.setEditable(false);
+	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 40));
+	    title.setBackground(new Color(80, 120, 147));
 	    
-	    JButton addCourse = new JButton("+");
+	    Icon plusIcon = new ImageIcon("src/plus.png");
+	    addCourse = new JButton(plusIcon);
 	    addCourse.addActionListener(this);
-	    addCourse.setBackground(new Color(213, 109, 97));
-	    addCourse.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 40));
-	
+	    this.add(addCourse);
+	    addCourse.setHorizontalAlignment(JButton.RIGHT);
+	    addCourse.setBackground(new Color(80, 120, 147));
+	    
+	    header.add(title);
+	    header.add(addCourse);
+	    
+	    StyledDocument doc = title.getStyledDocument();
+	    SimpleAttributeSet center = new SimpleAttributeSet();
+	    StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+	    doc.setParagraphAttributes(0, doc.getLength(), center, false);
+	    
+	    JPanel bottomFooter = new JPanel();
+	    bottomFooter.setBackground(new Color(160, 187, 92));
+	    footer = new JTextPane();
+	    footer.setText("test test");
+	    footer.setEditable(false);
+	    footer.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 20));
+	    footer.setBackground(new Color(160, 187, 92));
+	    bottomFooter.add(footer);
+	    
+	    StyledDocument doc2 = footer.getStyledDocument();
+	    SimpleAttributeSet center2 = new SimpleAttributeSet();
+	    StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+	    doc.setParagraphAttributes(0, doc.getLength(), center, false);
+	    
 	    Container c = getContentPane();
 	    c.add(panel, BorderLayout.CENTER);
-	    c.add(title, BorderLayout.BEFORE_FIRST_LINE);
+	    c.add(header, BorderLayout.BEFORE_FIRST_LINE);
+	    c.add(bottomFooter, BorderLayout.AFTER_LAST_LINE);
 	  }
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		courseCounter++;
-		if(courseCounter <= 7)
-		{
+		if(courseCounter <= 7 && e.getSource() == addCourse) {
 			//AddCourse courseWindow = new AddCourse();
-			AddCourse courseWindow = new AddCourse(d, courseCounter);
-	    	courseWindow.setBounds(500, 500, 550, 350);
-	    	courseWindow.setBackground(new Color(211,211,211));
-	    	courseWindow.setVisible(true);
+			AddCourse course = new AddCourse(d, courseCounter);
+	    	course.setBounds(500, 500, 550, 350);
+	    	course.setBackground(new Color(211,211,211));
+	    	course.setVisible(true);
+		}
+		
+		if(e.getSource() == course1) {
+			
+		}
+		if(e.getSource() == course2) {
+			
+		}
+		if(e.getSource() == course3) {
+			
+		}
+		if(e.getSource() == course4) {
+			
+		}
+		if(e.getSource() == course5) {
+			
+		}
+		if(e.getSource() == course6) {
+			
+		}
+		if(e.getSource() == course7) {
+			
+		}
+		if(e.getSource() == course8) {
+			
 		}
 	}
 	
@@ -154,7 +213,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	
 	public static void main(String [] args) {
 		HomeGui courseWindow = new HomeGui();
-	    courseWindow.setBounds(500, 500, 1080, 720);
+	    courseWindow.setBounds(500, 500, 1200, 650);
 	    courseWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    courseWindow.setBackground(new Color(211,211,211));
 	    courseWindow.setVisible(true);
