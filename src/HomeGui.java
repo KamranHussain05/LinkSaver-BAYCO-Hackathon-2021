@@ -49,17 +49,23 @@ public class HomeGui extends JFrame implements ActionListener {
 	    //Tile 1
 	    course1 = new JButton();
 	    course1.setText(Data.getCourseName(0));
-	    course1.enable(false);
+	    course1.setEnabled(false);
 	    course1.setHorizontalAlignment(JTextField.CENTER);
 	    course1.setBackground(new Color(230, 183, 97));
 	    course1.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
-	    panel.add(course1);
 	    course1.addActionListener(this);
+	    JButton editCourse1 = new JButton();
+	    editCourse1.setBounds(50,50, 100, 100);
+	    course1.add(editCourse1);
+	    panel.add(course1);
 	    
 	    //Tile 2
 	    course2 = new JButton();
 	    course2.setText(Data.getCourseName(1));
-	    course2.enable(false);
+	    course2.setEnabled(false);
+	    JButton editCourse2 = new JButton();
+	    editCourse2.setText(Data.getCourseName(1));
+	    course2.add(editCourse2);
 	    course2.setHorizontalAlignment(JTextField.CENTER);
 	    course2.setBackground(new Color(230, 183, 97));
 	    course2.setFont(new Font("Antipasta Pro Regular", Font.PLAIN, 30));
