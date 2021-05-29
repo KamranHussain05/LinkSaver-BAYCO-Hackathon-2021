@@ -46,7 +46,7 @@ public class AddCourse extends JFrame implements ActionListener {
 	    panel.add(nameLabel);
 	    inputCourseName = new JTextField(20);
 	    inputCourseName.setHorizontalAlignment(JTextField.RIGHT);
-	    inputCourseName.setBackground(new Color(230,230,225));
+	    inputCourseName.setBackground(new Color(255,255,255));
 	    inputCourseName.setFont(new Font("Montserrat", Font.PLAIN, 17));
 	    inputCourseName.setText(d.getCourseName(num));
 	    panel.add(inputCourseName);
@@ -57,7 +57,7 @@ public class AddCourse extends JFrame implements ActionListener {
 	    panel.add(courseLabel);
 	    inputCourseLink = new JTextField(20);
 	    inputCourseLink.setHorizontalAlignment(JTextField.RIGHT);
-	    inputCourseLink.setBackground(new Color(225,225,225));
+	    inputCourseLink.setBackground(new Color(255,255,255));
 	    inputCourseLink.setFont(new Font("Montserrat", Font.PLAIN, 17));
 	    inputCourseLink.setText(d.getCourseLink(num));
 	    panel.add(inputCourseLink);
@@ -68,22 +68,30 @@ public class AddCourse extends JFrame implements ActionListener {
 	    panel.add(linkLabel);
 	    inputMeetingLink = new JTextField(20);
 	    inputMeetingLink.setHorizontalAlignment(JTextField.RIGHT);
-	    inputMeetingLink.setBackground(new Color(225,225,225));
+	    inputMeetingLink.setBackground(new Color(255,255,255));
 	    inputMeetingLink.setFont(new Font("Montserrat", Font.PLAIN, 17));
 	    inputMeetingLink.setText(d.getMeetingLink(num));
 	    panel.add(inputMeetingLink);
 	
 	    //Add class button
-	    addClass = new JButton("Add Class");
-	    addClass.addActionListener(this);
+	    JPanel footer = new JPanel();
+	    GridLayout footLayout = new GridLayout(1,1);
+	    footer.setLayout(footLayout);
+	    addClass = new JButton();
+	    addClass.setText("Add Class");
 	    addClass.setBackground(new Color(79, 93, 117));
-	    addClass.setFont(new Font("Montserrat", Font.PLAIN, 20));
-	    addClass.setForeground(new Color(255,255,255));
+	    addClass.setForeground(Color.WHITE);
+	    addClass.addActionListener(this);
+	    addClass.setOpaque(false);
+	    addClass.setBorderPainted(false);
+	    this.add(addClass);
+	    footer.add(addClass);
+	    footer.setBackground(new Color(79, 93, 117));
 	
 	    //Container
 	    Container c = getContentPane();
 	    c.add(panel, BorderLayout.CENTER);
-	    c.add(addClass, BorderLayout.SOUTH);
+	    c.add(footer, BorderLayout.SOUTH);
 	  }
 	
 	  /**
@@ -131,7 +139,8 @@ public class AddCourse extends JFrame implements ActionListener {
 	    	errorMessage1.setBackground(new Color(211,211,211));
 	    	errorMessage1.setVisible(true);
 	    	
-	    	errorMessage1.setIconImage(logo.getImage());
+	    	 ImageIcon logo1 = new ImageIcon("Resources/logo.png");
+	    	errorMessage1.setIconImage(logo1.getImage());
 		}
 	    //Checks if error message is dismissed
 	    if(ErrorMessage.isDismissed()==true) {

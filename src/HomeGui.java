@@ -196,7 +196,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    title = new JTextPane();
-	    title.setText("Schedule Planner");
+	    title.setText("Link Saver");
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
@@ -238,7 +238,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	 * @param e ActionEvent from HomeGui JButtons
 	 */
 	public void actionPerformed(ActionEvent e) {
-		ImageIcon logo = new ImageIcon("src/logo.png");
+		ImageIcon logo = new ImageIcon("Resources/logo.png");
 		
 		if(e.getSource() == course1) {
 			//Opens links for course1
@@ -386,7 +386,7 @@ public class HomeGui extends JFrame implements ActionListener {
 	    courseWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    courseWindow.setBackground(new Color(211,211,211));
 	    
-	    ImageIcon logo = new ImageIcon("src/logo.png");
+	    ImageIcon logo = new ImageIcon("Resources/logo.png");
 		courseWindow.setIconImage(logo.getImage());
 	    
 		courseWindow.setVisible(true);
